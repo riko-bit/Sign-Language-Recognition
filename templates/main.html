@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Main Page - Sign Language Recognition</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url("/static/background.jpg") no-repeat center center/cover;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 50px;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-content {
+      z-index: 2;
+      max-width: 100%;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color:rgb(212, 196, 196);
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color:rgb(212, 196, 196);
+    }
+
+    .cta-button {
+      padding: 14px 28px;
+      font-size: 16px;
+      background-color: #FFD700;
+      color: black;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      z-index: 1000;
+      transition: top 0.3s;
+    }
+
+    .project-name {
+      font-size: 22px;
+      font-weight: bold;
+      color: rgb(203, 199, 199);
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-buttons button {
+      background: rgba(0, 0, 0, 0.1);
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      background: rgba(46, 1, 22, 0.9);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+
+    .section.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-text {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+
+    .section-text h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .section-text p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .section-image {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .section-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    #about-us {
+      background: #585151ea;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    #about-us h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #about-us p {
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="project-name">Sign Language Recognition</div>
+    <div class="nav-buttons">
+      <button onclick="document.getElementById('about-us').scrollIntoView({ behavior: 'smooth' });">About Us</button>
+      <button onclick="window.location.href='index.html'">Logout</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Break the Silence with Technology</h1><br>
+      <p>Our Sign Language Recognition system harnesses the power of computer vision and machine learning to interpret American Sign Language (ASL) gestures in real-time.</p>
+      <p>Designed to bridge the communication gap between the hearing and the deaf or hard-of-hearing community, this tool converts hand signs into readable text instantly. No wearables or special equipment required — just your hands and a webcam. Click below to experience how technology can make communication more inclusive and accessible for everyone.</p>
+      <button class="cta-button" onclick="window.location.href='/recognition'">Try Yourself</button>
+    </div>
+  </div>
+
+  <!-- Scroll-down Section (ASL image + text) -->
+  <div class="section" id="scroll-section">
+    <div class="section-text">
+      <h2>Understanding the Language of Hands</h2>
+      <p>
+        American Sign Language (ASL) is a complete, natural language that has the same linguistic properties as spoken languages, with grammar that differs from English.
+    The image here represents common ASL signs that form the foundation of communication for millions. By teaching machines to recognize these gestures, we take a step toward seamless interaction and accessibility in public spaces, education, and technology platforms.
+      </p>
+    </div>
+    <div class="section-image">
+      <img src="/static/asl.avif" alt="ASL Hand Gesture">
+    </div>
+  </div>
+  <hr style="border: 0; height: 2px; background: #fff; opacity: 0.1; margin: 0 20px;">
+
+  <!-- Second Scroll-down Section (Image left, Text right) -->
+  <div class="section" id="scroll-section-2">
+    <div class="section-image">
+      <img src="/static/asl2.webp" alt="Gesture Recognition">
+    </div>
+    <div class="section-text">
+      <h2>Learn the ASL Alphabet</h2>
+      <p>
+        Sign language is a powerful tool that bridges the communication gap between hearing and non-hearing individuals. The image above represents the American Sign Language (ASL) fingerspelling chart — a foundational step in learning sign language. Each hand gesture corresponds to a letter in the English alphabet, enabling users to spell words and names when specific signs are not known.
+    </div>
+  </div>
+
+
+  <!-- About Us -->
+  <div id="about-us">
+    <h2>About This Project</h2>
+    <p>This is a student-led project focused on accessibility, combining AI and gesture recognition to improve digital inclusion. Built with React, Node, and MongoDB for an end-to-end experience.</p>
+  </div>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+  <!-- Scroll Hide/Show Navbar Script -->
+  <script>
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        navbar.style.top = "-80px";
+      } else {
+        // Scrolling up
+        navbar.style.top = "0";
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+  </script>
+
+</body>
+</html>

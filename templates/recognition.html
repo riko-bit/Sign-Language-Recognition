@@ -1,0 +1,35 @@
+<!-- recognition.html (Recognition Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recognition - Sign Language Recognition</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('recognition-bg.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+    }
+    .recognition-container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="recognition-container">
+    <h1>Sign Language Recognition Module</h1>
+    <p>Live recognition processing will happen here. (Integrate Python backend)</p>
+    <button style="padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:5px; cursor:pointer;" onclick="window.location.href='/start_detection'">Start Sign Detection</button>
+  </div>
+
+</body>
+</html>
