@@ -98,11 +98,6 @@ python main.py
 
 ---
 
-## 📸 Preview
-*(Add screenshots of your app interface here if needed)*
-
----
-
 ## ✨ Features
 ✅ Real-time gesture recognition  
 ✅ Web-based UI for interaction  
